@@ -9,8 +9,8 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'tpope/vim-surround'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Bundle 'Shougo/neocomplete'
 
@@ -26,6 +26,7 @@ Bundle 'mileszs/ack.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
 Plugin 'klen/python-mode'
+Plugin 'ervandew/supertab'
 
 set nofoldenable    " disable folding
 
@@ -49,6 +50,8 @@ filetype plugin indent on    " required
 " user defined settings
 set relativenumber
 set number
+set incsearch
+set hlsearch
 
 " Go related mappings ,r - running file; ,t - running tests; ,gd reading
 " docummentation  https://github.com/fatih/vim-go/blob/master/README.md
@@ -66,6 +69,7 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+au FileType python let g:pymode_rope_goto_definition_bind = "gd"
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -83,8 +87,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" If you want :UltiSnipsEdit to split your window.  let g:UltiSnipsEditSplit="vertical"
 
 let mapleader=","
 
@@ -98,7 +101,7 @@ let g:Powerline_symbols = 'fancy'
 map <F2> :NERDTreeToggle<CR>
 
 " automatically change windows cwd to file's dir
-set autochdir
+" set autochdir
 
 " remap move to the next and previous buffer
 map gn :bn<cr>
