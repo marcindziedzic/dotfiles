@@ -103,7 +103,7 @@ set autochdir
 " remap move to the next and previous buffer
 map gn :bn<cr>
 map gp :bp<cr>
-map gd :bd<cr>  
+map gr :bd<cr>  
 
 " EasyMotion configuration
 nmap s <Plug>(easymotion-s2)
