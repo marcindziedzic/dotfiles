@@ -25,6 +25,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
+Plugin 'klen/python-mode'
+
+set nofoldenable    " disable folding
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
