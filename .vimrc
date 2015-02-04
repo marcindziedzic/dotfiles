@@ -23,6 +23,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
 Plugin 'klen/python-mode'
@@ -52,6 +53,7 @@ set relativenumber
 set number
 set incsearch
 set hlsearch
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Go related mappings ,r - running file; ,t - running tests; ,gd reading
 " docummentation  https://github.com/fatih/vim-go/blob/master/README.md
