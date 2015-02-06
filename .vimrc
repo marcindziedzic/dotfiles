@@ -28,6 +28,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
 Plugin 'klen/python-mode'
 Plugin 'ervandew/supertab'
+Bundle 'christoomey/vim-tmux-navigator'
 
 set nofoldenable    " disable folding
 
