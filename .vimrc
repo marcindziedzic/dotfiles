@@ -70,6 +70,16 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 
 au FileType python let g:pymode_rope_goto_definition_bind = "gd"
 
+" go-def settings
+let g:godef_split=2
+let g:godef_same_file_in_same_window=1
+
+" go-vim settings
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -113,3 +123,6 @@ nmap t <Plug>(easymotion-t2)
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
+
+" syntax for vim compiled from source
+syntax on 
