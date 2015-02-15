@@ -83,7 +83,7 @@ let g:go_highlight_structs = 1
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
@@ -108,6 +108,7 @@ let g:Powerline_symbols = 'fancy'
 
 " NERDTree setup
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 " automatically change windows cwd to file's dir
 " set autochdir
@@ -120,6 +121,9 @@ map gr :bd<cr>
 " EasyMotion configuration
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
+
+" Custom ignore for ctrl-p
+let g:ctrlp_custom_ignore = 'pyc'
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
