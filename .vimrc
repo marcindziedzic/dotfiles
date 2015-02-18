@@ -10,13 +10,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+" plugins
 Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Bundle 'Shougo/neocomplete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" VCS plugins
 Bundle 'tpope/vim-fugitive'
+Bundle 'mhinz/vim-signify'
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
@@ -25,6 +31,7 @@ Bundle 'majutsushi/tagbar'
 Plugin 'klen/python-mode'
 Plugin 'ervandew/supertab'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'schickling/vim-bufonly'
 
 set nofoldenable    " disable folding
 
@@ -43,17 +50,21 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
-"
-" user defined settings
+
+
+" search and line numbers 
 set relativenumber
 set number
 set incsearch
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Go related mappings ,r - running file; ,t - running tests; ,gd reading
-" docummentation  https://github.com/fatih/vim-go/blob/master/README.md
+" backup files disabled
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Go related mappings ,docummentation  https://github.com/fatih/vim-go/blob/master/README.md
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -83,20 +94,18 @@ let g:go_highlight_structs = 1
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
-" let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-
-" ### SNIPPETS CONFIGURATION 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" ultisnips configuration 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" If you want :UltiSnipsEdit to split your window.  let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="vertical"
 
 let mapleader=","
 
@@ -109,9 +118,6 @@ let g:Powerline_symbols = 'fancy'
 " NERDTree setup
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
-
-" automatically change windows cwd to file's dir
-" set autochdir
 
 " remap move to the next and previous buffer
 map gn :bn<cr>
