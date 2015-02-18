@@ -11,30 +11,31 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" plugins
-Plugin 'tpope/vim-surround'
-Plugin 'fatih/vim-go'
-Bundle 'Shougo/neocomplete'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
 " VCS plugins
 Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
 
+" Python and Golang 
+Bundle 'davidhalter/jedi-vim'
+Bundle 'klen/python-mode'
+Bundle 'fatih/vim-go'
+Bundle 'Shougo/neocomplete'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-surround'
+
+" Navigation
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Bundle 'majutsushi/tagbar'
-Plugin 'klen/python-mode'
-Plugin 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'schickling/vim-bufonly'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 set nofoldenable    " disable folding
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,7 +80,21 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
-au FileType python let g:pymode_rope_goto_definition_bind = "gd"
+" vim-jedi
+let g:jedi#popup_select_first = 0
+
+" klen/python-mode
+let g:pymode_rope = 0
+let g:pymode_folding = 1
+let g:pymode_breakpoint = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax_builtin_funcs = 0
+let g:pymode_trim_whitespaces = 0
+let g:pymode_syntax_all = 1
+" force python-mode to ignore warnings:
+" * E702 - numtilple statements in one line (BREAKPOINTs)
+let g:pymode_lint_ignore = "E702"
 
 " go-def settings
 let g:godef_split=2
@@ -91,13 +106,10 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
-" Disable AutoComplPop.
+" neocomplete
 let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
+let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_smart_case = 0
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
