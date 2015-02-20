@@ -19,7 +19,7 @@ Bundle 'mhinz/vim-signify'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
 Bundle 'fatih/vim-go'
-Bundle 'Shougo/neocomplete'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
@@ -82,6 +82,30 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " vim-jedi
 let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+
+" Better navigating through omnicomplete option list borrowed from https://hithub.com/mbrochh/vim-as-a-python-ide
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim set completeopt=longest,menuone
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+function! OmniPopup(action)
+	if pumvisible()
+		if a:action == 'j'
+			return "\<C-N>"
+		elseif a:action == 'k'
+			return "\<C-P>"
+		endif
+	endif
+	return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" omnipopup color scheme
+" :highlight Pmenu guibg=brown gui=bold
 
 " klen/python-mode
 let g:pymode_rope = 0
@@ -107,11 +131,11 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
 " neocomplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 0
-let g:neocomplete#enable_smart_case = 0
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" let g:acp_enableAtStartup = 0
+" let g:neocomplete#enable_at_startup = 0
+" let g:neocomplete#enable_smart_case = 0
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " ultisnips configuration 
 let g:UltiSnipsExpandTrigger="<tab>"
