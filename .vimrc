@@ -32,8 +32,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'christoomey/vim-tmux-navigator'
+
+" Other
 Bundle 'schickling/vim-bufonly'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'flazz/vim-colorschemes'
 
 set nofoldenable    " disable folding
 
