@@ -175,3 +175,5 @@ nmap <F8> :TagbarToggle<CR>
 
 " syntax for vim compiled from source
 syntax on 
+colorscheme Monokai
+
