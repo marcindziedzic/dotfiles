@@ -172,6 +172,8 @@ let g:ctrlp_custom_ignore = 'pyc'
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
+nnoremap <F5> :w \| ! clear; py.test -vs %<CR>
+inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
 
 " syntax for vim compiled from source
 syntax on 
