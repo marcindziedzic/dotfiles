@@ -67,6 +67,20 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set nobackup
 set nowritebackup
 set noswapfile
+set history=700
+set undolevels=700
+set wildmenu " enable commands completition menu
+set wildmode=list:longest,full
+set showmatch
+set diffopt+=vertical
+
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/htmlcov/*
+
+" clever paste followed by select and paste
+xnoremap p pgvy
 
 " Go related mappings ,docummentation  https://github.com/fatih/vim-go/blob/master/README.md
 au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -85,13 +99,18 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " vim-jedi
 let g:jedi#popup_select_first = 0
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
+let g:jedi#popup_on_dot=1
 
 " Better navigating through omnicomplete option list borrowed from https://hithub.com/mbrochh/vim-as-a-python-ide
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim set completeopt=longest,menuone
 
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+let g:loaded_youcompleteme = 1 " disable YCM
+let g:enable_ycm_at_startup = 0
+" autocmd FileType c++ Bundle 'Valloric/YouCompleteMe' TODO try this with
+" golang
 
 function! OmniPopup(action)
 	if pumvisible()
@@ -112,6 +131,8 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " klen/python-mode
 let g:pymode_rope = 0
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
 let g:pymode_folding = 1
 let g:pymode_breakpoint = 0
 let g:pymode_syntax = 1
@@ -120,8 +141,12 @@ let g:pymode_syntax_builtin_funcs = 0
 let g:pymode_trim_whitespaces = 0
 let g:pymode_syntax_all = 1
 " force python-mode to ignore warnings:
+" * W391 - empty line at the end of file
 " * E702 - numtilple statements in one line (BREAKPOINTs)
-let g:pymode_lint_ignore = "E702"
+" * E731 - do not assign a lambda expression, use a def
+let g:pymode_lint_ignore = "E731,E702,W391"
+let g:pymode_lint_on_fly = 0
+let g:pymode_lint_on_write = 0
 
 " go-def settings
 let g:godef_split=2
@@ -168,6 +193,7 @@ nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
 " Custom ignore for ctrl-p
+let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'pyc'
 
 " Tagbar configuration
