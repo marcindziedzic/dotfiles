@@ -25,6 +25,8 @@ Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
+Bundle 'ihacklog/HiCursorWords'
+
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
@@ -194,7 +196,7 @@ nmap t <Plug>(easymotion-t2)
 
 " Custom ignore for ctrl-p
 let g:ctrlp_by_filename = 1
-let g:ctrlp_custom_ignore = 'pyc'
+let g:ctrlp_custom_ignore = 'pyc\|mako\.py'
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
