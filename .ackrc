@@ -1,1 +1,2 @@
---ignore-file=ext:.pyc
+--ignore-file=ext:pyc
+--ignore-file=match:/\.mako\.py$/
