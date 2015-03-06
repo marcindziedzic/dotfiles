@@ -19,14 +19,12 @@ Bundle 'mhinz/vim-signify'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
 Bundle 'fatih/vim-go'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
-Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
 Bundle 'ihacklog/HiCursorWords'
-
+Bundle 'scrooloose/nerdcommenter'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
@@ -104,16 +102,6 @@ let g:jedi#popup_select_first = 0
 let g:jedi#completions_enabled = 1
 let g:jedi#popup_on_dot=1
 
-" Better navigating through omnicomplete option list borrowed from https://hithub.com/mbrochh/vim-as-a-python-ide
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim set completeopt=longest,menuone
-
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:loaded_youcompleteme = 1 " disable YCM
-let g:enable_ycm_at_startup = 0
-" autocmd FileType c++ Bundle 'Valloric/YouCompleteMe' TODO try this with
-" golang
-
 function! OmniPopup(action)
 	if pumvisible()
 		if a:action == 'j'
@@ -128,9 +116,6 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
-" omnipopup color scheme
-" :highlight Pmenu guibg=brown gui=bold
-
 " klen/python-mode
 let g:pymode_rope = 0
 let g:pymode_rope_completion = 0
@@ -142,6 +127,7 @@ let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 let g:pymode_trim_whitespaces = 0
 let g:pymode_syntax_all = 1
+
 " force python-mode to ignore warnings:
 " * W391 - empty line at the end of file
 " * E702 - numtilple statements in one line (BREAKPOINTs)
