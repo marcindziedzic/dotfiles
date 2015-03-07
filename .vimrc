@@ -88,10 +88,10 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
@@ -136,6 +136,9 @@ let g:pymode_lint_ignore = "E731,E702,W391"
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_on_write = 0
 
+" alternative key mappings
+" noremap <Leader>m :call pymode#motion#move("\v^(class|def)\s", "")<cr>
+
 " go-def settings
 let g:godef_split=2
 let g:godef_same_file_in_same_window=1
@@ -145,13 +148,6 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-
-" neocomplete
-" let g:acp_enableAtStartup = 0
-" let g:neocomplete#enable_at_startup = 0
-" let g:neocomplete#enable_smart_case = 0
-" let g:neocomplete#sources#syntax#min_keyword_length = 3
-" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " ultisnips configuration 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -176,6 +172,11 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gr :bd<cr>  
 
+" Fast write, quit, and edit
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>wq :wq<CR>
+
 " EasyMotion configuration
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
@@ -184,8 +185,7 @@ nmap t <Plug>(easymotion-t2)
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'pyc\|mako\.py'
 
-" Tagbar configuration
-nmap <F8> :TagbarToggle<CR>
+" Pytest configuration
 nnoremap <F5> :w \| ! clear; py.test -vs %<CR>
 inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
 
