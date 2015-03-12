@@ -21,7 +21,6 @@ Bundle 'klen/python-mode'
 Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 Bundle 'ihacklog/HiCursorWords'
 Bundle 'scrooloose/nerdcommenter'
@@ -152,6 +151,7 @@ let g:go_highlight_structs = 1
 
 " ultisnips configuration 
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
