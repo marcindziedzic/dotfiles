@@ -1,12 +1,19 @@
 alias tmux="TERM=xterm-256color tmux"
+
 alias rabbit='sudo rabbitmqctl'
 
-alias td='tmuxp load -2 $HOME/.tmuxp/dev.yaml'
-alias tp='tmuxp load -2 $HOME/.tmuxp/prod.yaml'
+alias tnd='tmuxp load -2 $HOME/.tmuxp/dev.yaml'
 alias tad='tmux -2 a -t dev'
-alias tap='tmux -2 a -t prod'
 alias tkd='tmux kill-session -t dev'
+
+alias tnp='tmuxp load -2 $HOME/.tmuxp/prod.yaml'
+alias tap='tmux -2 a -t prod'
 alias tkp='tmux kill-session -t prod'
+
 alias tls='tmux ls'
 
 alias clear_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
+
+alias gf='git fetch'
+alias gbvv='git branch -vv'
+alias gstl='git stash list'
