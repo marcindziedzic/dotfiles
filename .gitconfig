@@ -9,5 +9,14 @@
 	ci = commit -v
 	cia = commit -av
 	b = branch -av
+	cp = cherry-pick
+	ss = stash save 
 [core]
 	editor = vim
+[user]
+	email = marcin.dziedzic@pragmaticcoders.com
+	name = Marcin Dziedzic
+[diff]
+	tool = =
+[merge]
+	tool = =
