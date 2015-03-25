@@ -10,6 +10,7 @@
 	cia = commit -av
 	b = branch -av
 	cp = cherry-pick
+	c = clone
 	ss = stash save 
 [core]
 	editor = vim
