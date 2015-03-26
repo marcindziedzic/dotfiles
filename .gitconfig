@@ -9,6 +9,7 @@
 	ci = commit -v
 	cia = commit -av
 	b = branch -av
+	bd = branch -D
 	cp = cherry-pick
 	c = clone
 	ss = stash save 
