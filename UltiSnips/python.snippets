@@ -1,5 +1,12 @@
-snippet tf "test fixture" b
+snippet f "py.test fixture" b
 @pytest.fixture
 def ${1}(${2:self}):
 	${3}
+endsnippet
+
+snippet fm "py.test mock fixture" b
+@pytest.yield_fixture(autouse=True)
+def ${1}(${2:self}):
+	with mock.patch.object(${3}, '${4}') as m:
+		return m
 endsnippet
