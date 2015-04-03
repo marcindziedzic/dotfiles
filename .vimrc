@@ -190,6 +190,7 @@ inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
 
 " Ack
 noremap <Leader>a :Ack --ignore-file=match:test_ <cword><cr>
+noremap <Leader>A :Ack <cword><cr>
 
 " syntax for vim compiled from source
 syntax on 
