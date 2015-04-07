@@ -18,6 +18,7 @@ Bundle 'mhinz/vim-signify'
 " Python and Golang 
 Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
+Bundle 'vim-scripts/swap-parameters'
 Bundle 'fatih/vim-go'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
