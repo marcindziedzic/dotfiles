@@ -18,4 +18,5 @@ alias gf='git fetch'
 alias gbvv='git branch -vv'
 alias gstl='git stash list'
 
-alias lg='ls | grep  --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias lsg='ls | grep  --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias psg='ps aux | grep  --color=auto'
