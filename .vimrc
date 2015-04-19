@@ -39,6 +39,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'flazz/vim-colorschemes'
 
 set nofoldenable    " disable folding
+set clipboard=unnamed 		" system clipboard
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
