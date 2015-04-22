@@ -8,7 +8,7 @@ snippet fm "py.test mock fixture" b
 @pytest.yield_fixture(autouse=True)
 def ${1}(${2:self}):
 	with mock.patch.object(${3}, '${4}') as m:
-		return m
+		yield m
 endsnippet
 
 snippet tc "Test class" b
@@ -18,10 +18,20 @@ class Test${1}(object):
 		${0:assert False is True}
 endsnippet
 
+snippet t "test method" b
+def test_${2}(self):
+	${0:assert False is True}
+endsnippet
+
 snippet c "Class" b
 class ${1}(${2:object}):
 
 	def ${3}(${4:self}):
 		${0:pass}
+endsnippet
+
+snippet m "Method" b
+def ${1}(${2:self}):
+	${0:return None}
 endsnippet
 
