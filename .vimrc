@@ -166,12 +166,16 @@ let g:Powerline_symbols = 'fancy'
 
 " NERDTree setup
 map <F2> :NERDTreeToggle<CR>
+nmap nt :NERDTree %<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
 " remap move to the next and previous buffer
 map gn :bn<cr>
 map gp :bp<cr>
 map gr :bd<cr>  
+
+" remap copy current file relative path
+:nmap cp :let @" = expand("%")
 
 " Fast write, quit, and edit
 nnoremap <Leader>q :q<CR>
