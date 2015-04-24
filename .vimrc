@@ -123,7 +123,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 let g:pymode_rope = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_folding = 1
+let g:pymode_folding = 0
 let g:pymode_breakpoint = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
@@ -176,7 +176,11 @@ map gp :bp<cr>
 map gr :bd<cr>  
 
 " remap copy current file relative path
-:nmap cp :let @" = expand("%")
+nmap cp :let @" = expand("%")
+
+" remap jump to last edited location
+nmap gl '^
+nnoremap gl '^
 
 " Fast write, quit, and edit
 nnoremap <Leader>q :q<CR>
