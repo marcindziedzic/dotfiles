@@ -26,12 +26,41 @@ endsnippet
 snippet c "Class" b
 class ${1}(${2:object}):
 
-	def ${3}(${4:self}):
+	def ${3:__init__}(${4:self}):
 		${0:pass}
 endsnippet
 
 snippet m "Method" b
 def ${1}(${2:self}):
 	${0:return None}
+endsnippet
+
+snippet ifn "if not" b
+if not ${2:object}:
+	${0:pass}
+endsnippet
+
+snippet as "Vanilla assert something" b
+assert ${1:exp}
+endsnippet
+
+snippet ae "Vanilla assert equal" b
+assert ${1:exp} == ${2:expected}
+endsnippet
+
+snippet at "Vanilla assert True" b
+assert ${0:exp} is True
+endsnippet
+
+snippet af "Vanilla assert False" b
+assert ${0:exp} is False
+endsnippet
+
+snippet an "Vanilla assert is None" b
+assert ${0:exp} is None
+endsnippet
+
+snippet ann "Assert is not None" b
+assert ${0:exp} is not None
 endsnippet
 
