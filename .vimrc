@@ -139,6 +139,17 @@ let g:pymode_lint_ignore = "E731,E702,W391"
 let g:pymode_lint_on_fly = 0
 let g:pymode_lint_on_write = 0
 
+function! ExtractVariable()
+	let name = inputdialog("name please")
+	if name != ""
+		execute "normal O" . name . " = "
+		normal p
+		execute (line('.')+1) . ",$s/" . escape(getreg('"'), '/\') . "/" . name . "/" 
+	endif
+endfunction
+
+noremap <Leader>e y:call ExtractVariable()<cr>
+
 " alternative key mappings
 " noremap <Leader>m :call pymode#motion#move("\v^(class|def)\s", "")<cr>
 
