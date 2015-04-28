@@ -11,6 +11,12 @@ def ${1}(${2:self}):
 		yield m
 endsnippet
 
+snippet fma "py.test mock autospec" b
+@pytest.fixture
+def mock_${1}(self):
+	return mock.create_autospec(${0})
+endsnippet
+
 snippet tc "Test class" b
 class Test${1}(object):
 
@@ -28,6 +34,11 @@ class ${1}(${2:object}):
 
 	def ${3:__init__}(${4:self}):
 		${0:pass}
+endsnippet
+
+snippet error "Class error" b
+class ${1}Error(Exception):
+	${0:pass}
 endsnippet
 
 snippet m "Method" b
@@ -64,3 +75,7 @@ snippet ann "Assert is not None" b
 assert ${0:exp} is not None
 endsnippet
 
+snippet aex "with pytest.raises" b
+with pytest.raises(${1}) as ex:
+	${0:pass}
+endsnippet
