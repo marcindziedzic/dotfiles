@@ -197,6 +197,7 @@ nnoremap gl '^
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
+inoremap <C-c> <Esc>:w<CR>
 
 " EasyMotion configuration
 nmap s <Plug>(easymotion-s2)
