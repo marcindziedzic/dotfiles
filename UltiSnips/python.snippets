@@ -4,14 +4,21 @@ def ${1}(${2:self}):
 	${3}
 endsnippet
 
-snippet fm "py.test mock fixture" b
+snippet fm "py.test with mock.patch.object" b
+@pytest.yield_fixture()
+def ${1}(${2:self}):
+	with mock.patch.object(${3}, '${4}') as m:
+		yield m
+endsnippet
+
+snippet fma "py.test mock fixture" b
 @pytest.yield_fixture(autouse=True)
 def ${1}(${2:self}):
 	with mock.patch.object(${3}, '${4}') as m:
 		yield m
 endsnippet
 
-snippet fma "py.test mock autospec" b
+snippet fms "py.test mock autospec" b
 @pytest.fixture
 def mock_${1}(self):
 	return mock.create_autospec(${0})
