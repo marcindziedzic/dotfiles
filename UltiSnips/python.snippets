@@ -1,4 +1,4 @@
-snippet f "py.test fixture" b
+snippet fi "py.test fixture" b
 @pytest.fixture
 def ${1}(${2:self}):
 	${3}
@@ -25,9 +25,7 @@ def mock_${1}(self):
 endsnippet
 
 snippet tc "Test class" b
-class Test${1}(object):
-
-	def test_${2}(self):
+class Test${1}(object): def test_${2}(self):
 		${0:assert False is True}
 endsnippet
 
@@ -43,13 +41,29 @@ class ${1}(${2:object}):
 		${0:pass}
 endsnippet
 
+snippet init "simple init" b
+def __init__(${1:self}):
+	${0:pass}
+endsnippet
+
 snippet error "Class error" b
-class ${1}Error(Exception):
+class ${1}Error(AmazonError):
 	${0:pass}
 endsnippet
 
 snippet m "Method" b
 def ${1}(${2:self}):
+	${0:return None}
+endsnippet
+
+snippet f "Function" b
+def ${1}(${2}):
+	${0:return None}
+endsnippet
+
+snippet p "Property" b
+@property
+def ${1}(self):
 	${0:return None}
 endsnippet
 
