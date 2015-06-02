@@ -3,33 +3,47 @@ snippet fd "fixture decorator" b
 @pytest.fixture
 endsnippet
 
-snippet fi "py.test fixture" b
+snippet pymu "pytest.mark.usefixtures" b
+@pytest.mark.usefixtures('${0}')
+endsnippet
+
+snippet pyf "py.test fixture" b
 @pytest.fixture
 def ${1}(${2:self}):
 	${3}
 endsnippet
 
-snippet fm "py.test with mock.patch.object" b
+snippet pyyf "py.test yield_fixture" b
 @pytest.yield_fixture()
 def ${1}(${2:self}):
-	with mock.patch.object(${3}, '${4}') as m:
-		yield m
+	${3}
 endsnippet
 
-snippet fma "py.test mock fixture" b
-@pytest.yield_fixture(autouse=True)
-def ${1}(${2:self}):
-	with mock.patch.object(${3}, '${4}') as m:
-		yield m
+snippet mpo "@mock.patch.object" b
+@mock.patch.object(${3}, '${4}')
 endsnippet
 
-snippet fms "py.test mock autospec" b
-@pytest.fixture
-def mock_${1}(self):
-	return mock.create_autospec(${0})
+snippet wmpo "with mock.patch.object" b
+with mock.patch.object(${3}, '${4}') as m:
+	yield m
 endsnippet
 
-snippet tc "Test class" b
+snippet wmpf "with mock.patch module or function" b
+with mock.patch(${3}, '${4}') as m:
+	yield m
+endsnippet
+
+snippet wpyr "with pytest.raises" b
+with pytest.raises(${1}) as ex:
+	${0:pass}
+assert ex is not None
+endsnippet
+
+snippet ma "py.test mock autospec" b
+${1:return }mock.create_autospec(${0})
+endsnippet
+
+snippet tc "test class" b
 class Test${1}(object): def test_${2}(self):
 		${0:assert False is True}
 endsnippet
@@ -39,7 +53,7 @@ def test_${2}(self):
 	${0:assert False is True}
 endsnippet
 
-snippet c "Class" b
+snippet c "class" b
 class ${1}(${2:object}):
 
 	def ${3:__init__}(${4:self}):
@@ -101,7 +115,3 @@ snippet ann "Assert is not None" b
 assert ${0:exp} is not None
 endsnippet
 
-snippet aex "with pytest.raises" b
-with pytest.raises(${1}) as ex:
-	${0:pass}
-endsnippet
