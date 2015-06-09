@@ -212,7 +212,7 @@ nnoremap <F5> :w \| ! clear; py.test -vs %<CR>
 inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
 
 " Ack
-noremap <Leader>a :Ack --ignore-file=match:test_ <cword><cr>
+noremap <Leader>a :Ack --ignore-file=match:test <cword><cr>
 noremap <Leader>A :Ack <cword><cr>
 
 " syntax for vim compiled from source

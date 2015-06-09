@@ -75,6 +75,18 @@ def ${1}(${2:self}):
 	${0:return None}
 endsnippet
 
+snippet cm "class method" b
+@classmethod
+def ${1}(${2:cls}):
+	${0:return None}
+endsnippet
+
+snippet sm "static method" b
+@staticmethod
+def ${1}(${2}):
+	${0:return None}
+endsnippet
+
 snippet f "Function" b
 def ${1}(${2}):
 	${0:return None}
@@ -111,7 +123,11 @@ snippet an "Vanilla assert is None" b
 assert ${0:exp} is None
 endsnippet
 
-snippet ann "Assert is not None" b
+snippet ann "Vanilla assert is not None" b
 assert ${0:exp} is not None
+endsnippet
+
+snippet al "Vanilla assert len" b
+assert len(${1:exp}) == ${0}
 endsnippet
 
