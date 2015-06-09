@@ -22,3 +22,5 @@
 	tool = =
 [merge]
 	tool = =
+[push]
+	default = simple
