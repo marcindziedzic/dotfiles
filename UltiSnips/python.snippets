@@ -1,5 +1,5 @@
 
-snippet fd "fixture decorator" b
+snippet pyfd "fixture decorator" b
 @pytest.fixture
 endsnippet
 
@@ -17,6 +17,11 @@ snippet pyyf "py.test yield_fixture" b
 @pytest.yield_fixture()
 def ${1}(${2:self}):
 	${3}
+endsnippet
+
+snippet pym "py.test request.node.get_marker" b
+marker = request.node.get_marker('${1}')
+${2:value} = marker.args[${3:0}] if marker else ${4} 
 endsnippet
 
 snippet mpo "@mock.patch.object" b
@@ -44,7 +49,9 @@ ${1:return }mock.create_autospec(${0})
 endsnippet
 
 snippet tc "test class" b
-class Test${1}(object): def test_${2}(self):
+class Test${1}(object): 
+
+	def test_${2}(self):
 		${0:assert False is True}
 endsnippet
 
@@ -129,5 +136,10 @@ endsnippet
 
 snippet al "Vanilla assert len" b
 assert len(${1:exp}) == ${0}
+endsnippet
+
+snippet fore "for loop with index" b
+for idx, ${1:item} in enumerate(${2:iterable}):
+	${3:pass}
 endsnippet
 
