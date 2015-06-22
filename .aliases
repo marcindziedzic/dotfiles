@@ -6,6 +6,10 @@ alias tnd='tmuxp load -2 $HOME/.tmuxp/dev.yaml'
 alias tad='tmux -2 a -t dev'
 alias tkd='tmux kill-session -t dev'
 
+alias tns='tmuxp load -2 $HOME/.tmuxp/scratchpad.yaml'
+alias tas='tmux -2 a -t scratchpad'
+alias tks='tmux kill-session -t scratchpad'
+
 alias tnp='tmuxp load -2 $HOME/.tmuxp/prod.yaml'
 alias tap='tmux -2 a -t prod'
 alias tkp='tmux kill-session -t prod'
