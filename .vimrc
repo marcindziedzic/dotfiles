@@ -25,6 +25,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-surround'
 Bundle 'ihacklog/HiCursorWords'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'ervandew/supertab'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
@@ -210,13 +211,15 @@ let g:ctrlp_prompt_mappings = {
   \ 'MarkToOpen()': ['<s-m>'],
   \ }
 
+" Supertab compeltion order
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Pytest configuration
 nnoremap <F5> :w \| ! clear; py.test -vs %<CR>
 inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
 
 nnoremap <Leader>t :w \| ! clear; py.test -vs %<CR>
 inoremap <Leader>t <ESC> :w \| ! clear ; py.test -vs %<CR>
-
 
 " Ack
 noremap <Leader>a :Ack --ignore-file=match:test <cword><cr>
