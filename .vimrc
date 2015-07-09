@@ -201,15 +201,22 @@ inoremap <C-c> <Esc>:w<CR>
 
 " EasyMotion configuration
 nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
 
 " Custom ignore for ctrl-p
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = 'pyc\|mako\.py'
 
+let g:ctrlp_prompt_mappings = {
+  \ 'MarkToOpen()': ['<s-m>'],
+  \ }
+
 " Pytest configuration
 nnoremap <F5> :w \| ! clear; py.test -vs %<CR>
 inoremap <F5> <ESC> :w \| ! clear ; py.test -vs %<CR>
+
+nnoremap <Leader>t :w \| ! clear; py.test -vs %<CR>
+inoremap <Leader>t <ESC> :w \| ! clear ; py.test -vs %<CR>
+
 
 " Ack
 noremap <Leader>a :Ack --ignore-file=match:test <cword><cr>
