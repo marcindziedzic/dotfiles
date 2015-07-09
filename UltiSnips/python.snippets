@@ -33,7 +33,7 @@ with mock.patch.object(${3}, '${4}') as m:
 	yield m
 endsnippet
 
-snippet wmpf "with mock.patch module or function" b
+snippet wmp "with mock.patch module or function" b
 with mock.patch(${3}, '${4}') as m:
 	yield m
 endsnippet
@@ -134,8 +134,8 @@ snippet ann "Vanilla assert is not None" b
 assert ${0:exp} is not None
 endsnippet
 
-snippet al "Vanilla assert len" b
-assert len(${1:exp}) == ${0}
+snippet aii "Vanilla assert isinstance" b
+assert isinstance(${0:object}, ${0:type})
 endsnippet
 
 snippet fore "for loop with index" b
