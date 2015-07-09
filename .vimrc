@@ -189,6 +189,10 @@ map gr :bd<cr>
 " remap copy current file relative path
 nmap cp :let @" = expand("%")
 
+" remap jump to last edited location
+nmap gl '^
+nnoremap gl '^
+
 " Fast write, quit, and edit
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
