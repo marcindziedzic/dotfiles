@@ -14,7 +14,7 @@ def ${1}(${2:self}):
 endsnippet
 
 snippet pyyf "py.test yield_fixture" b
-@pytest.yield_fixture()
+@pytest.yield_fixture
 def ${1}(${2:self}):
 	${3}
 endsnippet
@@ -40,8 +40,9 @@ endsnippet
 
 snippet wpyr "with pytest.raises" b
 with pytest.raises(${1}) as ex:
-	${0:pass}
+	${2:pass}
 assert ex is not None
+assert ex.value.message == '${0}'
 endsnippet
 
 snippet ma "py.test mock autospec" b
@@ -138,8 +139,17 @@ snippet aii "Vanilla assert isinstance" b
 assert isinstance(${0:object}, ${0:type})
 endsnippet
 
+snippet anc "Vanilla assert not called" b
+assert not mock_${0}.called
+endsnippet
+
 snippet fore "for loop with index" b
 for idx, ${1:item} in enumerate(${2:iterable}):
 	${3:pass}
+endsnippet
+
+snippet ford "for loop on dicts" b
+for ${1:key}, ${2:value} in ${0:d}.iteritems():
+	pass
 endsnippet
 

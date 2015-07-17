@@ -1,2 +1,3 @@
 --ignore-file=ext:pyc
 --ignore-file=match:/\.mako\.py$/
+--type-add=pytests:match:/^test_.*\.py$/
