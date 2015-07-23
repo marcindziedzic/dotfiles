@@ -1,0 +1,11 @@
+session_name: scratchpad
+windows:
+  - window_name: TODO list
+    focus: true 
+    panes:
+    - shell_command:
+            - vim /home/marcin/Desktop/todo
+  - window_name: shell
+    panes:
+    - shell_command:
+            - cd ~

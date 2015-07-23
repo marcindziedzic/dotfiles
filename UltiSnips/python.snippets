@@ -143,6 +143,13 @@ snippet anc "Vanilla assert not called" b
 assert not mock_${0}.called
 endsnippet
 
+snippet amcl "Vanilla assert not called" b
+assert ${1:object}.call_args_list == [
+	mock.call(${2:params_for_first_call}),
+	mock.call(${3:params_for_first_call}),
+]
+endsnippet
+
 snippet fore "for loop with index" b
 for idx, ${1:item} in enumerate(${2:iterable}):
 	${3:pass}
