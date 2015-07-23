@@ -43,3 +43,7 @@ alias run_frontend_magento_test='webstores-admin --conf=settings/test_store.py r
 alias run_workers='webstores-admin --conf=settings/test_store.py run_workers'
 alias run_fetching='webstores-admin --conf=settings/test_store.py run_fetching'
 
+# Run docker-compose
+alias run_containers='(cd $HOME/workspace/containers ; docker-compose up -d)'
+alias stop_containers='(cd $HOME/workspace/containers ; docker-compose stop)'
+
