@@ -136,14 +136,18 @@ assert ${0:exp} is not None
 endsnippet
 
 snippet aii "Vanilla assert isinstance" b
-assert isinstance(${0:object}, ${0:type})
+assert isinstance(${1:object}, ${0:type})
 endsnippet
 
 snippet anc "Vanilla assert not called" b
 assert not mock_${0}.called
 endsnippet
 
-snippet amcl "Vanilla assert not called" b
+snippet acw "Vanilla assert not called" b
+${1:m}.assert_called_once_with(${0})
+endsnippet
+
+snippet acl "Vanilla assert not called" b
 assert ${1:object}.call_args_list == [
 	mock.call(${2:params_for_first_call}),
 	mock.call(${3:params_for_first_call}),
