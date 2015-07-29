@@ -1,0 +1,5 @@
+# http://benw.me/posts/colourized-pretty-printed-json-with-curl/
+function jcurl() {
+	curl "$@" | json | pygmentize -l json
+}
+export -f jcurl
