@@ -24,6 +24,14 @@ marker = request.node.get_marker('${1}')
 ${2:value} = marker.args[${3:0}] if marker else ${4} 
 endsnippet
 
+
+snippet pymp "py.test request.node.get_marker" b
+@pytest.mark.parametrize((${1:comma_separated_params_list}), [
+	(${2:comma_separated_params_values}),
+])
+endsnippet
+
+
 snippet mpo "@mock.patch.object" b
 @mock.patch.object(${3}, '${4}')
 endsnippet

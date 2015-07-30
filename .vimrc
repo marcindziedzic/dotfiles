@@ -224,6 +224,11 @@ inoremap <Leader>t <ESC> :w \| ! clear ; py.test -vs %<CR>
 " Ack
 noremap <Leader>a :Ack --ignore-file=match:test <cword><cr>
 noremap <Leader>A :Ack <cword><cr>
+noremap <Leader>c :Ack --ignore-file=match:test "class <cword>"<cr>
+noremap <Leader>C :Ack "class <cword>"<cr>
+noremap <Leader>m :Ack --ignore-file=match:test "def <cword>"<cr>
+noremap <Leader>M :Ack "def <cword>"<cr>
+" noremap <Leader>d :Ack "class <cword><cr>
 
 " syntax for vim compiled from source
 syntax on 
