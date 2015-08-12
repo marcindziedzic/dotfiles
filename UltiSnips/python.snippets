@@ -3,7 +3,7 @@ snippet pyfd "fixture decorator" b
 @pytest.fixture
 endsnippet
 
-snippet pymu "pytest.mark.usefixtures" b
+snippet pyu "pytest.mark.usefixtures" b
 @pytest.mark.usefixtures('${0}')
 endsnippet
 
@@ -24,13 +24,11 @@ marker = request.node.get_marker('${1}')
 ${2:value} = marker.args[${3:0}] if marker else ${4} 
 endsnippet
 
-
 snippet pymp "py.test request.node.get_marker" b
 @pytest.mark.parametrize((${1:comma_separated_params_list}), [
 	(${2:comma_separated_params_values}),
 ])
 endsnippet
-
 
 snippet mpo "@mock.patch.object" b
 @mock.patch.object(${3}, '${4}')
@@ -119,43 +117,47 @@ if not ${2:object}:
 	${0:pass}
 endsnippet
 
-snippet as "Vanilla assert something" b
+snippet as "assert something" b
 assert ${1:exp}
 endsnippet
 
-snippet ae "Vanilla assert equal" b
+snippet ae "assert equal" b
 assert ${1:exp} == ${2:expected}
 endsnippet
 
-snippet at "Vanilla assert True" b
+snippet at "assert True" b
 assert ${0:exp} is True
 endsnippet
 
-snippet af "Vanilla assert False" b
+snippet af "assert False" b
 assert ${0:exp} is False
 endsnippet
 
-snippet an "Vanilla assert is None" b
+snippet an "assert is None" b
 assert ${0:exp} is None
 endsnippet
 
-snippet ann "Vanilla assert is not None" b
+snippet ann "assert is not None" b
 assert ${0:exp} is not None
 endsnippet
 
-snippet aii "Vanilla assert isinstance" b
+snippet aii "assert isinstance" b
 assert isinstance(${1:object}, ${0:type})
 endsnippet
 
-snippet anc "Vanilla assert not called" b
+snippet amc "assert mock called" b
+assert mock_${0}.called
+endsnippet
+
+snippet amnc "assert mock not called" b
 assert not mock_${0}.called
 endsnippet
 
-snippet acw "Vanilla assert not called" b
+snippet amco "assert mock called once with" b
 ${1:m}.assert_called_once_with(${0})
 endsnippet
 
-snippet acl "Vanilla assert not called" b
+snippet acl "assert not called" b
 assert ${1:object}.call_args_list == [
 	mock.call(${2:params_for_first_call}),
 	mock.call(${3:params_for_first_call}),
