@@ -39,9 +39,9 @@ alias ff='find . -name '
 # WebInterpret aliases wi-webstores
 alias run_store_manager='webstores-admin --conf=components/store_manager/settings/defaults.py run_store_manager'
 alias run_store_connector_frontend='webstores-admin --conf=components/store_connector/settings/multiple_test_platforms.py run_store_connector_frontend'
-alias run_frontend_magento_test='webstores-admin --conf=settings/defaults.py run_frontend --locale=de --store="magento-test"'
-alias run_workers='webstores-admin --conf=settings/test_store.py run_workers'
-alias run_fetching='webstores-admin --conf=settings/test_store.py run_fetching'
+alias run_frontend_magento_test='webstores-admin run_frontend --locale=de --store="magento-test"'
+alias run_workers='webstores-admin run_workers'
+alias run_fetching='webstores-admin run_fetching'
 alias gtw='cd $HOME/workspace/wi-webstores ; workon webstores'
 
 # Run docker-compose
