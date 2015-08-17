@@ -1,7 +1,13 @@
 #!/bin/bash
 
-cp .aliases ~/.aliases
-cp .vimrc ~/.vimrc
-cp UltiSnips/python.snippets ~/.vim/UltiSnips/python.snippets
+cp .ackrc ~/.
+cp .aliases ~/.
+cp .gitconfig ~/.
+cp .tmux.conf ~/.
+cp .vimrc ~/.
+cp .zshrc ~/.
+cp .scripts ~/.
+cp -r UltiSnips ~/.vim/.
+
 
 echo "done"
