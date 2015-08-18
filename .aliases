@@ -42,6 +42,7 @@ alias run_store_connector_frontend='webstores-admin --conf=components/store_conn
 alias run_frontend_magento_test='webstores-admin run_frontend --locale=de --store="magento-test"'
 alias run_workers='webstores-admin run_workers'
 alias run_fetching='webstores-admin run_fetching'
+alias run_admin_panel='cd $HOME/workspace/wi-webstores/webstores; workon webstores; webstores-admin --conf=components/admin_panel/settings/defaults.py run_admin_panel'
 alias gtw='cd $HOME/workspace/wi-webstores ; workon webstores'
 
 # Run docker-compose
