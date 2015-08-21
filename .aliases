@@ -36,15 +36,6 @@ alias psg='ps aux | grep --color=auto'
 
 alias ff='find . -name '
 
-# WebInterpret aliases wi-webstores
-alias run_store_manager='webstores-admin --conf=components/store_manager/settings/defaults.py run_store_manager'
-alias run_store_connector_frontend='webstores-admin --conf=components/store_connector/settings/multiple_test_platforms.py run_store_connector_frontend'
-alias run_frontend_magento_test='webstores-admin run_frontend --locale=de --store="magento-test"'
-alias run_workers='webstores-admin run_workers'
-alias run_fetching='webstores-admin run_fetching'
-alias run_admin_panel='cd $HOME/workspace/wi-webstores/webstores; workon webstores; webstores-admin --conf=components/admin_panel/settings/defaults.py run_admin_panel'
-alias gtw='cd $HOME/workspace/wi-webstores ; workon webstores'
-
 # Run docker-compose
 alias run_containers='(cd $HOME/workspace/containers ; docker-compose up -d)'
 alias stop_containers='(cd $HOME/workspace/containers ; docker-compose stop)'
