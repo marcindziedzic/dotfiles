@@ -26,6 +26,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'ihacklog/HiCursorWords'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
+Bundle 'marcindziedzic/vim-numbertoggle'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
@@ -178,7 +179,6 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 
 " NERDTree setup
-map <F2> :NERDTreeToggle<CR>
 nmap nt :NERDTree %<CR>
 let NERDTreeIgnore = ['\.pyc$']
 

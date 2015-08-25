@@ -157,7 +157,7 @@ snippet amco "assert mock called once with" b
 ${1:m}.assert_called_once_with(${0})
 endsnippet
 
-snippet acl "assert not called" b
+snippet amcal "assert not called" b
 assert ${1:object}.call_args_list == [
 	mock.call(${2:params_for_first_call}),
 	mock.call(${3:params_for_first_call}),
@@ -172,5 +172,9 @@ endsnippet
 snippet ford "for loop on dicts" b
 for ${1:key}, ${2:value} in ${0:d}.iteritems():
 	pass
+endsnippet
+
+snippet cfm "# FIXME" b
+# FIXME ${0}
 endsnippet
 
