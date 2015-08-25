@@ -232,5 +232,10 @@ noremap <Leader>M :Ack "def <cword>"<cr>
 
 " syntax for vim compiled from source
 syntax on 
-colorscheme Monokai
+
+if strftime("%H") < 15
+  colorscheme Monokai
+else
+  colorscheme default
+endif
 
