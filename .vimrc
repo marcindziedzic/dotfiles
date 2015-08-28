@@ -103,7 +103,7 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " vim-jedi
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 let g:jedi#completions_enabled = 1
 let g:jedi#popup_on_dot=1
 
@@ -233,9 +233,10 @@ noremap <Leader>M :Ack "def <cword>"<cr>
 " syntax for vim compiled from source
 syntax on 
 
-if strftime("%H") < 15
-  colorscheme Monokai
-else
-  colorscheme default
-endif
+"if strftime("%H") < 15
+  "colorscheme Monokai
+"else
+  "colorscheme default
+"endif
+colorscheme default
 
