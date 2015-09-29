@@ -40,3 +40,4 @@ alias ff='find . -name '
 alias run_containers='(cd $HOME/workspace/containers ; docker-compose up -d)'
 alias stop_containers='(cd $HOME/workspace/containers ; docker-compose stop)'
 
+alias go='gnome-open'
