@@ -14,10 +14,6 @@ alias tnp='tmuxp load -2 $HOME/.tmuxp/prod.yaml'
 alias tap='tmux -2 a -t prod'
 alias tkp='tmux kill-session -t prod'
 
-alias tnpr='tmuxp load -2 $HOME/.tmuxp/prod_release.yaml'
-alias tapr='tmux -2 a -t prod-release'
-alias tkpr='tmux kill-session -t prod-release'
-
 alias tls='tmux ls'
 
 alias clear_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
