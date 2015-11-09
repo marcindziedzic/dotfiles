@@ -37,3 +37,7 @@ alias run_containers='(cd $HOME/workspace/containers ; docker-compose up -d)'
 alias stop_containers='(cd $HOME/workspace/containers ; docker-compose stop)'
 
 alias go='gnome-open'
+
+
+alias dcup='docker-compose up -d'
+alias dcdown='docker-compose stop'
