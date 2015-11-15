@@ -86,7 +86,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$HOME/android-sdk-linux/tools:$PATH"
 
-
 source $HOME/.local_aliases
 source $HOME/.aliases
 source $HOME/.scripts
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
