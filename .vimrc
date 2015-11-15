@@ -139,7 +139,7 @@ let g:pymode_syntax_all = 1
 " * E731 - do not assign a lambda expression, use a def
 let g:pymode_lint_ignore = "E731,E702,W391"
 let g:pymode_lint_on_fly = 0
-let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_write = 0
 
 function! ExtractVariable()
 	let name = inputdialog("name: ")
@@ -193,6 +193,12 @@ nmap cp :let @" = expand("%")
 " remap jump to last edited location
 nmap gl '^
 nnoremap gl '^
+
+" Make cursour move fast like hell
+set ttyfast
+set vb
+set t_vb=
+set lazyredraw
 
 " Fast write, quit, and edit
 nnoremap <Leader>q :q<CR>
