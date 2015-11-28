@@ -236,6 +236,10 @@ noremap <Leader>m :Ack --ignore-file=match:test "def <cword>"<cr>
 noremap <Leader>M :Ack "def <cword>"<cr>
 " noremap <Leader>d :Ack "class <cword><cr>
 
+" set spaces for html and javascript
+autocmd Filetype html setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
 " syntax for vim compiled from source
 syntax on 
 
