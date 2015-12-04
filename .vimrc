@@ -28,6 +28,12 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
 Bundle 'marcindziedzic/vim-numbertoggle'
 
+" HTML5 and JavaScript
+Bundle 'othree/html5.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mattn/emmet-vim'
+
+
 " Navigation
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
