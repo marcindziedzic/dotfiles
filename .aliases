@@ -41,3 +41,8 @@ alias go='gnome-open'
 
 alias dcup='docker-compose up -d'
 alias dcdown='docker-compose stop'
+
+
+# maven aliases
+alias mci='mvn clean install'
+alias msb='mvn spring-boot:run -Plocal -Dspring.profiles.active=local'
