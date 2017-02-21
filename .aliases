@@ -26,8 +26,15 @@ alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
 alias gbg='gb | grep --color=auto'
 alias gbrg='gbr | grep --color=auto'
+
 alias gupall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'
 alias gstall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} status \; -exec echo "--------------------------" \;'
+alias gcmsgall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} commit -am "update common-api" \; -exec echo "--------------------------" \;'
+alias gpall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} push origin master \; -exec echo "--------------------------" \;'
+
+
+# Maven 
+alias mvnciall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec mvn -f={}/pom.xml clean install \; -exec echo "--------------------------" \;'
 
 alias lsg='ls | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 alias psg='ps aux | grep --color=auto'
