@@ -27,9 +27,12 @@ alias gcpc='git cherry-pick --continue'
 alias gbg='gb | grep --color=auto'
 alias gbrg='gbr | grep --color=auto'
 alias gupall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'
+alias gstall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} status \; -exec echo "--------------------------" \;'
 
 alias lsg='ls | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 alias psg='ps aux | grep --color=auto'
+
+alias sedpoms='find . -maxdepth 2 -regextype sed -name "pom.xml" -exec sed -i 's/0\.1\.52-SNAPSHOT/0\.1\.53-SNAPSHOT/g' {} \;';
 
 alias ff='find . -name '
 
