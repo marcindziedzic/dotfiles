@@ -32,6 +32,8 @@ alias gstall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exe
 alias gcmsgall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} commit -am "update common-api" \; -exec echo "--------------------------" \;'
 alias gpall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec git --git-dir={}/.git --work-tree=$PWD/{} push origin master \; -exec echo "--------------------------" \;'
 
+alias grepe='grep -r -A 3 --exclude-dir=target --exclude-dir=.idea --exclude=\*.iml --exclude=LOG_FILE\* '
+alias grepel='grep -rl -A 3 --exclude-dir=target --exclude-dir=.idea --exclude=\*.iml --exclude=LOG_FILE\* '
 
 # Maven 
 alias mvnciall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -exec echo "analysing {}" \; -exec mvn -f={}/pom.xml clean install \; -exec echo "--------------------------" \;'
@@ -39,7 +41,7 @@ alias mvnciall='find . -maxdepth 1 -type d -regextype sed -regex ".*kea.*api" -e
 alias lsg='ls | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 alias psg='ps aux | grep --color=auto'
 
-alias sedpoms='find . -maxdepth 2 -regextype sed -name "pom.xml" -exec sed -i 's/0\.1\.52-SNAPSHOT/0\.1\.53-SNAPSHOT/g' {} \;';
+alias sedpoms='find . -maxdepth 2 -regextype sed -name "pom.xml" -exec sed -i 's/0\.1\.54-SNAPSHOT/0\.1\.55-SNAPSHOT/g' {} \;';
 
 alias ff='find . -name '
 
